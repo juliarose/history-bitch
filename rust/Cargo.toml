@@ -1,0 +1,52 @@
+[package]
+name = "history-bitch"
+version = "0.1.0"
+authors = ["Julia <julia@juliarose.dev>"]
+description = "A sample project with wasm-pack"
+license = "MIT"
+edition = "2018"
+
+# [lib]
+# crate-type = ["cdylib"]
+
+[dependencies]
+console_error_panic_hook = "0.1.6"
+console_log = "0.2.0"
+log = "0.4.14"
+wasm-bindgen = "0.2"
+wasm-bindgen-test = "0.2"
+wasm-bindgen-futures = "0.4.28"
+serde = { version = "1.0.130", features = ["derive"] }
+serde_json = "1.0.68"
+libc = "0.2"
+js-sys = "0.3.55"
+sycamore = { version = "0.6.3", features = ["serde"] }
+uuid = { version = "0.8.2", features = ["v4", "wasm-bindgen", "serde"] }
+reqwest = { version = "0.11", features = ["json"] }
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'console',
+  'Headers',
+  'Request',
+  'HtmlDivElement',
+  'InputEvent',
+  'KeyboardEvent',
+  'Location',
+  'Storage',
+  'RequestInit',
+  'RequestMode',
+  'Response',
+  'Window',
+]
+
+[profile.release]
+# Do not perform backtrace for panic on release builds.
+panic = 'abort'
+# Perform optimizations on all codegen units.
+codegen-units = 1
+# Optimize for size.
+opt-level = 's' # or 'z' to optimize "aggressively" for size
+# Enable link time optimization.
+lto = true

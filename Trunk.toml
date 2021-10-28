@@ -1,0 +1,3 @@
+[build]
+dist = "wasm"
+release = true

@@ -1,0 +1,21 @@
+{
+  "name": "history-bitch",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-wasm": "wasm-pack build --release --target web",
+    "pack": "npx webpack",
+    "build-trunk": "rm -rf ./wasm && trunk build && find ./wasm -type f -iname '*bg.wasm' | xargs -I '{}' mv '{}' './wasm/wasm_bg.wasm' && find ./wasm -type f -iname '*.js' | xargs -I '{}' mv '{}' './wasm/wasm.js' && rm './wasm/index.html'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.20"
+  },
+  "devDependencies": {
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
