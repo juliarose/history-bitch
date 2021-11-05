@@ -1,10 +1,15 @@
 import App from './App.svelte';
+import responseJSON from './response.js';
+import { combineDescriptions } from './trades.js';
 
+const trades = combineDescriptions(responseJSON);
 const app = new App({
 	target: document.body,
 	props: {
-		name: 'Julia'
+		name: 'Julia',
+		trades
 	}
 });
+
 
 export default app;

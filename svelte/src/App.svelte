@@ -1,7 +1,9 @@
 <script>
 	import Photo from './Photo.svelte';
+	import Trade from './Trade.svelte';
 	
 	export let name;
+	export let trades;
 	
 	const photo = {
 		name: 'pizza'
@@ -11,6 +13,9 @@
 <main>
 	<h1>Hello {name}!</h1>
 	<Photo {...photo}/>
+	{#each trades as trade}
+		<Trade { trade }/>
+	{/each}
 </main>
 
 <style>
@@ -23,7 +28,6 @@
 
 	h1 {
 		color: #ff3e00;
-		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
 	}
