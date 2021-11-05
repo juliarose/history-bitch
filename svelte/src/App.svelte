@@ -1,6 +1,6 @@
 <script>
-	import Photo from './Photo.svelte';
 	import Trade from './Trade.svelte';
+	import Fetch from './Fetch.svelte';
 	
 	export let name;
 	export let trades;
@@ -11,6 +11,7 @@
 </script>
 
 <main>
+	<Fetch/>
 	{#each trades as trade}
 		<Trade { trade }/>
 	{/each}
