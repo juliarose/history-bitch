@@ -11,8 +11,6 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<Photo {...photo}/>
 	{#each trades as trade}
 		<Trade { trade }/>
 	{/each}
